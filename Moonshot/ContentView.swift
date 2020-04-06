@@ -10,17 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            GeometryReader { geo in
-                Image("romania")
-                 .resizable()
-                 .aspectRatio(contentMode: .fit)
-                    .frame(width: geo.size.width)
-                // .clipped()
-                
+        ScrollView(.vertical){
+            VStack(spacing: 10){
+                ForEach(0..<100){ item in
+                    Text("Item \(item)")
+                        .font(.title)
+                }
             }
+            .frame(maxWidth: .infinity)
         }
-        
     }
 }
 
