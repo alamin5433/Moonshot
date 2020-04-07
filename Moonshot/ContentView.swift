@@ -10,14 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView(.vertical){
-            VStack(spacing: 10){
-                ForEach(0..<100){ item in
-                    Text("Item \(item)")
-                        .font(.title)
+        NavigationView {
+            List (0..<50){ row in
+                NavigationLink(destination: Text("Detail\(row)")){
+                    Text("Row \(row)")
                 }
             }
-            .frame(maxWidth: .infinity)
+        .navigationBarTitle("SwiftUI")
         }
     }
 }
